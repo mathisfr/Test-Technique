@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\Hubspot\HubspotApi;
+use App\Hubspot\HubspotApiToDatabaseHandler;
 use Exception;
 use App\Models\Company;
 use App\Models\Contact;
-use App\Hubspot\HubspotDeleteDatabase;
-use App\Hubspot\HubspotSaveApiToDatabase;
 use Illuminate\Console\Command;
 
 class ApiToDatabase extends Command
@@ -42,16 +42,17 @@ class ApiToDatabase extends Command
      */
     public function handle()
     {
+        $hubspot = new HubspotApiToDatabaseHandler(new HubspotApi);
+
         // Models qu'on fait passer à la méthode deleteTable pour supprimer toutes les données de la table compagnies et contacts
         $models = [
             Company::class,
             Contact::class
         ];
-        HubspotDeleteDatabase::deleteTable($models);
+        $hubspot::deleteTable($models);
 
         // On récupère les données de l'api hubspot et on les enregistres en base de données
-        $hubspotSaveApiToDatabase = new HubspotSaveApiToDatabase();
-        $hubspotSaveApiToDatabase->apiToDatabase();
+        $hubspot->apiToDatabase();
         
         return $this->info('La migration a été effectuée avec succès');
     }
