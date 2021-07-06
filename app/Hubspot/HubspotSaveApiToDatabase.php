@@ -15,22 +15,9 @@ class HubspotSaveApiToDatabase{
      */
     private $apiToken = "";
     
-    // /**
-    //  * Les propriétés qu'on veut récupérer de l'entreprise
-    //  *
-    //  * @var string
-    //  */
-    // private $properties =  "&properties=name
-    //                         &properties=website
-    //                         &properties=phone
-    //                         &properties=annualrevenue
-    //                         &properties=numberofemployees
-    //                         &properties=industry
-    //                         &properties=city
-    //                         &properties=zip
-    //                         &properties=country
-    //                         &properties=description
-    //                         ";
+    /**
+    * Les propriétés qu'on veut récupérer de l'entreprise
+    **/
     private $properties = [
         'name',
         'website',
@@ -69,33 +56,12 @@ class HubspotSaveApiToDatabase{
         $none = 'Aucune information';
 
         for($i = 0; $i<count($companies); $i++){
-                // $contact = new Contact();
-                // $contact->firstName = $contacts[$i]['contacts'][0]['properties'][0]['value'] ?? $none;
-                // $contact->lastName = $contacts[$i]['contacts'][0]['properties'][2]['value'] ?? $none;
-                // $contact->phone = $none;
-                // $contact->email = $contacts[$i]['contacts'][0]['identities'][0]['identity'][0]['value'] ?? $none;
-                // $contact->save();
 
                 $newContact = json_decode($contact[$i], true);
-                // $this->info($newContact['contacts']['0']['properties']['0']['value'] ?? $none);
 
                 $addContact = Contact::createFromApi($newContact, $none);
                 
                 Company::createFromApi($companies[$i], $addContact->id, $none);
-
-                // $company = new Company();
-                // $company->name = $companies[$i]['properties']['name']['value'] ?? $none;
-                // $company->sector = $companies[$i]['properties']['industry']['value'] ?? $none;
-                // $company->city = $companies[$i]['properties']['city']['value'] ?? $none;
-                // $company->country = $companies[$i]['properties']['country']['value'] ?? $none;
-                // $company->phone = $companies[$i]['properties']['phone']['value'] ?? $none;
-                // $company->employers = $companies[$i]['properties']['numberofemployees']['value'] ?? 0;
-                // $company->turnover = $companies[$i]['properties']['annualrevenue']['value'] ?? 0;
-                // $company->website = $companies[$i]['properties']['website']['value'] ?? $none;
-                // $company->zip = $companies[$i]['properties']['zip']['value'] ?? $none;
-                // $company->description = $companies[$i]['properties']['description']['value'] ?? $none;
-                // $company->contact_id = $contact->id;
-                // $company->save();
 
         }
     }

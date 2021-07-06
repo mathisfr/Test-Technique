@@ -2,7 +2,6 @@
 
 namespace App\Hubspot;
 
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 
 class HubspotDeleteDatabase{
