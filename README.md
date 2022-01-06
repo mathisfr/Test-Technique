@@ -18,10 +18,6 @@ Vous devez après effectuer la commande ```php artisan migration``` pour constru
 Vous ne devez pas oublier de taper la commande: ```php artisan schedule:work``` pour activer la planification automatique des requêtes ```API TO DATABASES``` du projet.
 
 De mon côté j'ai fait tourner l'application avec [Laragon](https://laragon.org/), qui est un environnement de développement Web dédié au système d’exploitation Windows. Il est accompagné de différentes technologies qui nous facilite la création de nouveaux projets.
-## Diagramme de base de données:
-Ouvrir le diagramme sur [app.diagrams.net](https://drive.google.com/file/d/1fgm5xlFn4asYhi4SV6KhH20RADzuMtN0/view?usp=sharing), premier diagramme de BDD donc n'hésitez pas à me contacter et me corriger pour que je puisse apprendre et m'amélioré.
-## Diagramme de classes PHP:
-Ouvrir le diagramme sur [app.diagrams.net](https://drive.google.com/file/d/1jfFHig7KsU-RNlyYsy7BKkk2s0ZBdesY/view?usp=sharing), premier diagramme de classes donc n'hésitez pas à me contacter et me corriger pour que je puisse apprendre et m'amélioré.
 ## Ce que j'ai appris:
 Ce teste était excellent pour moi car il m'a permis de commencer à apprendre et à avoir les bases dans:
 - Laravel qui est un framework exceptionnel avec énormément d'outils qui nous facilite grandement la vie.
