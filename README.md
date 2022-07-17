@@ -19,7 +19,7 @@ Vous ne devez pas oublier de taper la commande: ```php artisan schedule:work``` 
 
 De mon côté j'ai fait tourner l'application avec [Laragon](https://laragon.org/), qui est un environnement de développement Web dédié au système d’exploitation Windows. Il est accompagné de différentes technologies qui nous facilite la création de nouveaux projets.
 ## Ce que j'ai appris:
-Ce teste était excellent pour moi car il m'a permis de commencer à apprendre et à avoir les bases dans:
+Ce test était excellent pour moi car il m'a permis de commencer à apprendre et à avoir les bases dans:
 - Laravel qui est un framework exceptionnel avec énormément d'outils qui nous facilite grandement la vie.
 - Vue js qui est un framework Javascript pour faire des applications de qualité très simplement.
 - Tailwindcss qui est un framework Css qui nous facilite le travail (même si je me sens plus productif en Css pure).
